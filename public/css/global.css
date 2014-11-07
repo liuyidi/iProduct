@@ -1,0 +1,114 @@
+
+
+#wrap {
+background-color: #ECEEF1;
+padding-top: 75px;
+padding-bottom: 30px;
+min-height: 600px;
+}
+
+.panel-heading ul {
+margin-left: 15px;
+margin-bottom: 6px;
+}
+.panel-heading ul, .panel-heading li {
+margin: 0;
+padding: 0;
+list-style: none;
+display: inline-block;
+margin: 0;
+border-radius: 3px;
+}
+.index-nodes {
+text-align: left;
+}
+.index-nodes a {
+padding: 4px 5px;
+font-size: 14px;
+margin-left: 0 !important;
+margin-right: 15px;
+border-radius: 3px;
+color: #707b91;
+}
+.label-node {
+display: inline-block;
+/* line-height: 1.6; */
+font-weight: normal;
+}
+
+/*Section版块*/
+.panel-body .item {
+position: relative;
+border-bottom: 1px solid #ddd;
+padding: 12px 15px;
+zoom: 1;
+}
+
+.panel-body .item .avatar {
+float: left;
+margin-right: 12px;
+}
+.panel-body .item .index-topic-item {
+padding-top: 3px !important;
+}
+.panel-body .item .title {
+margin: 0;
+font: normal 15px/21px Helvetica, arial, freesans, sans-serif;
+}
+.panel-body .item .meta {
+margin-top: 5px;
+color: #aaa;
+font-size: 12px;
+}
+.label-index-topic {
+background-color: #fff;
+color: #888;
+font-weight: normal;
+font-size: 12px;
+padding: 0;
+}
+.panel-body .item .badge{
+position: absolute;
+top: 23px;
+right: 18px;
+}
+
+.bc-sidebar>ul>li>a {
+display: block;
+margin: 0 0 -1px;
+padding: 8px 14px;
+border: 1px solid #e5e5e5;
+color:#000;
+}
+/*侧边栏*/
+#userinfo .img{
+width: 90px;
+float: left;
+display: inline;
+}
+#userinfo .img .imgcircle {
+display: block;
+border-radius: 80px;
+width: 90px;
+height: 90px;
+}
+#userinfo .word {
+float: left;
+margin-left: 10px;
+width: 150px;
+}
+
+/*底部*/
+
+#footer {
+border-top: 1px solid #ccc;
+padding: 20px 0;
+
+}
+
+#footer a {
+color: #707b91 !important;
+text-decoration: none;
+}
+
+#footer .muted ul li a{color: #707b91 !important;}

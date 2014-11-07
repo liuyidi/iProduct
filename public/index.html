@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>wordpress</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="leftside">
+<div id="header">
+ <div id="header-logo">
+   <div id="author-profile">
+            <div class="author-profile-photo">
+               <img src="img/mine.png" alt="author_img">
+            </div>
+            <div class="author-profile-content">
+               <h1 class="title">一流的人</h1>
+               <p class="subtitle">Just a Geek for IT!</p>
+            </div>
+    </div>
+  </div>
+ <div id="main-nav" class="col span-12">
+   <ul>
+     <li><a href="#">首页</a></li>
+     <li><a href="#">社交</a></li>
+     <li><a href="#">留言薄</a></li>
+     <li><a href="#">关于我们</a></li>
+   </ul>
+ </div>
+</div>
+
+<div class="sidebar">
+  <ul>
+  
+    <li id="search">
+	  
+	</li>
+    <?php wp_list_pages('title_li=<h2>Pages</h2>'); //页面?>
+    <li>
+	  <h2></h2>
+	  <ul>
+	   
+	  </ul>
+	</li> 
+	<li>
+	  <h2><?php _e('Archives');//文章归档?></h2>
+	  <ul>
+	     <?php wp_get_archives('type=monthly');?>
+	  </ul>
+	</li>
+	<?php get_links_list();  //增加友情链接?>
+	<li>
+	  <h2><?php _e('Meta'); //登录-注册-管理后台?></h2>
+	  <ul>
+	    <?php wp_register(); ?>
+		<li><?php wp_loginout(); ?></li>
+		<?php wp_meta(); ?>
+	  </ul>
+	</li>
+  <?php endif; ?>
+  </ul>
+</div>
+<div id="footer">
+ <p>Copyright &#169; 2014<?php bloginfo('name');?></p>
+</div>
+</div>
+
+<div class="rightside">
+<div id="container">
+   <?php if(have_posts()): ?><?php while(have_posts()):the_post(); ?>
+   <div class="post" id="post-<?php the_ID();?>">
+     <h2><a></a></h2>
+     <div class="entry">
+	   
+	   <p class="postmetadata">
+	    
+	   </p>
+     </div>
+   </div>
+      <div class="navigation"><?php posts_nav_link();?></div>  <!--上一页 | 下一页-->
+     <div class="post">
+	    <h2></h2>
+	 </div>
+</div>
+</div>
+</body>
+</html>

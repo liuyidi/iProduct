@@ -1,0 +1,10 @@
+#
+# robots.txt for cblog
+#
+
+User-agent: *
+Allow: /
+Disallow: /uploads
+Disallow: /system
+Disallow: /public
+Disallow: /application
