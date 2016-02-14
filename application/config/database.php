@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = '928171466';
+$db['default']['password'] = 'root';
 $db['default']['database'] = 'cblog';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = 'cb_';
