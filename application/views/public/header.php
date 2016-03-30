@@ -51,6 +51,7 @@
 	
 
 	</style>
+	<script type="text/javascript" src="<?php echo base_url();?>public/js/jquery.min.js"></script>
 </head>
 <body>
 <div class="container">
