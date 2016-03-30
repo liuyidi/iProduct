@@ -18,8 +18,8 @@
     		<td><?=$item['email']?></td>
     		<td><?=$item['description']?></td>
     		<td><?=$item['group']?></td>
-    		<td><?=$item['ip']?></td>
-    		<td><?=date("Y-m-d,h:i:s",$item['lastlogin'])?></td>
+    		<td><?=$item['ip']?>&nbsp;&nbsp;</td>
+    		<td><?=date("Y-m-d,H:i:s",$item['lastlogin']);?></td>
         </tr>
     <?php endforeach;?>
     </table>

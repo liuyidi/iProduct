@@ -17,7 +17,7 @@
 		                    <h3><a href="<?php echo site_url('post/show/'.$value['pid']);?>"><?php echo $value['title'];?></a></h3>
 		                    <div class="meta">
 		                    	<span class="pull-left"><a class="zhan" href="#">赞(<span><?php echo $value['praisesnum']; ?>0</span>)</a></span>&nbsp;&nbsp;
-			                    <span>发布于: <?php echo date("Y-m-d,h:i:s",$value['addtime']); ?></span>
+			                    <span>发布于: <?php echo date("Y-m-d,H:i:s",$value['addtime']); ?></span>
 			                    <span>分类: <?php echo $value['cid']; ?></span>
 			                    <span>作者: <a href="<?php echo site_url('user/info/'.$value['uid']);?>"><?php echo $value['username'];?></a></span>
 			                    <div class="comment_count  pull-right">

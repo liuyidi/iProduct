@@ -1,4 +1,10 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/*
+ * 产品操作  PostController
+ * @param
+ *
+ */
 class Post extends CB_Controller{
 
 	function __construct(){
@@ -110,8 +116,6 @@ class Post extends CB_Controller{
 	public function add(){
 		$this->load->helper('form');
 
-
-
 		$data['title']='发布产品';
 		$uid=$this->session->userdata('uid');
 		$user=$this->user_m->get_user_by_id($uid);
@@ -123,15 +127,14 @@ class Post extends CB_Controller{
                     'title'=>$this->input->post('title',true),
                     'content'=>$this->input->post('content'),
                     'site_url'=>$this->input->post('site_url'),
-                    //'cid'=>$cid,
+                    'cid'=>$this->input->post('cid'),
                     'uid'=>$uid,
                     'addtime'=>time(),
                     'updatetime'=>time()
-
 				);
 				//可在此处加入审核
                 //可加入标签tag
-               // if($this->post_m->add($data)){
+                if($this->post_m->add($data)){
                 	//最新帖子ID
                 	//$new_fid=$this->db->insert_id();
 
@@ -141,10 +144,10 @@ class Post extends CB_Controller{
                 	//$this->db->where('cid',$cid)->update('categories',array('listnum')=>$category['listnum']+1));
                      
                     //可加入更新帖子时间
-                
+                    redirect('post/all');
 
                 //exit();
-                //}
+                }
                 $this->post_m->add($data);
                 
 			}
@@ -180,5 +183,16 @@ class Post extends CB_Controller{
     }
 
 
+
+    /*
+     * ajax  请求
+     *
+     */
+    public function submit(){
+        //判断是否是ajax请求
+        if($this->input->is_ajax_request()){
+
+        }
+    }
 
 }

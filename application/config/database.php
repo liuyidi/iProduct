@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = '127.0.0.1';
 $db['default']['username'] = 'root';
 $db['default']['password'] = 'root';
 $db['default']['database'] = 'cblog';
@@ -67,3 +67,21 @@ $db['default']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
+
+//echo '<pre>';
+//print_r($db['default']);
+//echo '</pre>';
+//
+//echo 'Trying to connect to database: ' .$db['default']['database'];
+
+//$dbh=mysqli_connect
+//(
+//	$db['default']['hostname'],
+//	$db['default']['username'],
+//	$db['default']['password'])
+//or die('Cannot connect to the database because: ' . mysqli_error());
+//mysqli_select_db($db['default']['database']);
+//
+//echo '<br />   Connected OK:'  ;
+//die( 'file: ' .__FILE__ . '--> Line: ' .__LINE__);
+

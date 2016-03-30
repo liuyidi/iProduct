@@ -7,6 +7,7 @@
 		<div class="form-group"><label>用户名：</label><input type="text" name="username"></div>
 		<div class="form-group"><label>密码：</label><input type="password" name="password"></div>
 		<div class="form-group"><label>确认密码：</label><input type="password" name="repassword"></div>
+		<div class="form-group"><label>邀请码：</label><input type="password" name="invitecode"></div>
 		<input class="btn submit" name="commit" type="submit" value="完成注册" />
 		<hr>
 		<a href="<?php echo site_url('user/login');?>">登录</a><br/>

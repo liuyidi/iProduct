@@ -40,7 +40,6 @@ class Post_m extends CI_Model{
         $this->db->select('posts.*,b.username as rname');
         $this->db->from('posts');
         $this->db->where('posts.uid',$uid);
-        //$this->db->where('posts.is_hidden',0);
         $this->db->join('users b','b.uid=posts.uid','left');
         //暂时不加入categories
         $this->db->limit($num);

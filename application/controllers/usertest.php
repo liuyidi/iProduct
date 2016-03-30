@@ -1,6 +1,6 @@
 <?php
  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
-class User extends MY_Controller{
+class Usertest extends MY_Controller{
     
 	public function index(){
         //加载模型， 别名

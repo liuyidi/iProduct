@@ -63,7 +63,7 @@
 		    <ul class="nav navbar-nav nav-left">
 			    <li><a href="<?php echo site_url('');?>">首页</a></li>
 			    <li><a href="<?php echo site_url('user/userslist');?>">成员</a></li>
-			    <li><a href="<?php echo site_url('post/all');?>">所有产品</a></li>
+			    <li><a href="<?php echo site_url('post/all');?>">发现产品</a></li>
 			    <li><a class="btn" href="<?php echo site_url('post/add');?>">发布产品</a></li>
 		    </ul>
 		    <ul class="nav navbar-nav navbar-right">

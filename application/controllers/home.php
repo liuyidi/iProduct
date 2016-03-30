@@ -13,7 +13,7 @@ class Home extends CB_Controller{
     
     //首页
 	public function index(){
-     $data['title']='产品';
+     $data['title']='产品title';
      $this->load->view('home',$data);
 	}
 
