@@ -233,7 +233,7 @@ class CI_Hooks {
 				require($filepath);
 			}
 
-			$function($params);
+			//$function($params);
 		}
 
 		$this->in_progress = FALSE;

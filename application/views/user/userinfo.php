@@ -10,7 +10,15 @@
                 <div class="panel-body">
                     <?=$username?>
                     <p>第<?=$uid?>个用户</p>
-                    <span id="addfollow" class="btn btn-success">关注</span>
+                    <?php if($is_owner == false): ?>
+                        <?php if($is_followed == true): ?>
+                            <span id="unfollow" class="btn btn-danger">取消关注</span>
+                        <?php elseif($is_followed == false): ?>
+                            <span id="addfollow" class="btn btn-success">关注</span>
+                        <?php endif; ?>
+                    <?php else: ?>
+
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="panel panel-default col-xs-6">
@@ -64,21 +72,39 @@
 </div>
 <script>
 $(function(){
-
+    /**
+     * 添加关注&取消关注
+     */
     var uid = <?=$uid?>;
-    var url = "<?php echo site_url("follow/addFollow");?>";
+    var url_follow = "<?php echo site_url("follow/addFollow");?>";
     $(document).on("click","#addfollow",function(){
         var self = $(this);
         $.ajax({
-            url: url,
+            url: url_follow,
             type: "post",
             dataType: "json",
             data:{"followed_id":uid},
             success: function(data){
                 console.log(data);
                 if(data.code == 200){
-                    self.text("已关注");
-                    self.attr("id","unfollow");
+                    self.text("取消关注").attr("id","unfollow").removeClass("btn-success").addClass("btn-danger");
+                }
+            }
+        })
+    });
+
+    var url_unfollow = "<?php echo site_url("follow/unFollow");?>";
+    $(document).on("click","#unfollow",function(){
+        var self = $(this);
+        $.ajax({
+            url: url_unfollow,
+            type: "post",
+            dataType: "json",
+            data:{"followed_id":uid},
+            success: function(data){
+                console.log(data);
+                if(data.code == 200){
+                    self.text("关注").attr("id","addfollow").removeClass("btn-danger").addClass("btn-success");
                 }
             }
         })

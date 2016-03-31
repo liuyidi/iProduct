@@ -17,6 +17,7 @@ class Follow extends CB_Controller{
 
     /*
      * 添加关注
+     * ajax
      */
     public function addFollow(){
         if($this->input->is_ajax_request()){
@@ -33,18 +34,23 @@ class Follow extends CB_Controller{
                 $list["code"] = "200";
                 $list["result"] = $result;
             }
-            return $this->output
-                ->set_content_type('application/json')
-                ->set_output(json_encode($list));
+            return $this->output->set_content_type('application/json')->set_output(json_encode($list));
         }
     }
 
     /*
      * 取消关注
+     * ajax
      */
     public function unFollow(){
         if($this->input->is_ajax_request()){
-
+            $value = $this->follow_m->un_follow($this->uid,$this->input->post('followed_id'));
+            if($value == true){
+                $result["status"] = "取消关注成功";
+                $result["code"] = "200";
+                $result["value"] = $value;
+            }
+            return $this->output->set_content_type('application/json')->set_output(json_encode($result));
         }
     }
 

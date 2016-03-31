@@ -5,6 +5,7 @@ class User extends CB_Controller{
    function __construct(){
       parent::__construct();
       $this->load->model('user_m');
+      $this->load->model('follow_m');
       $this->load->library('myclass');
    }
 
@@ -32,7 +33,21 @@ class User extends CB_Controller{
       //用户回复
       $this->load->model('comment_m');
       $data['user_comments']=$this->comment_m->get_comments_by_uid($uid,5);
-      
+
+      //判断session用户是否关注当前用户
+      $uid2=$this->session->userdata('uid'); //登录的用户
+      if($uid2 == $uid){
+         $data['is_owner'] = true;
+      }else{
+         $data['is_owner'] = false;
+         $data['is_followed']=$this->follow_m->check_follow($uid2,$uid);
+      }
+
+
+      //用户关注的人&用户的粉丝
+      $data['followings'] = $this->follow_m->get_followings_by_uid($uid,10);
+      $data['followers'] = $this->follow_m->get_followers_by_uid($uid,10);
+
       $this->load->view('user/userinfo',$data);
      
    }

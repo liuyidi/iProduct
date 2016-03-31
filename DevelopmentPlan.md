@@ -12,3 +12,5 @@
     - 支持Markdown(最好)
 
 - 用户中心改版 参考知乎,mmmai
+
+- 添加社交信息(follow,collect,comment,vote)
