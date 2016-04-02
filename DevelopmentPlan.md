@@ -14,3 +14,7 @@
 - 用户中心改版 参考知乎,mmmai
 
 - 添加社交信息(follow,collect,comment,vote)
+
+#### 4.1 
+- 模仿Product Hunt 开发restful api(https://api.producthunt.com/v1/docs)
+- 在teambition上开始进度开发

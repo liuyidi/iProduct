@@ -50,7 +50,11 @@ class Follow_m extends CI_Model{
      * @param 数量 num
      */
     public function get_followings_by_uid($uid,$num){
-        return true;
+
+        $query = $this->db->where("follower_id",$uid)
+                 ->from("follows")
+                 ->get();
+        return $query->row_array();
     }
 
     /*

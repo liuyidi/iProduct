@@ -12,6 +12,7 @@ class Follow extends CB_Controller{
         parent::__construct();
         $this->load->library('session');
         $this->load->model("follow_m");
+        $this->load->model("user_m");
         $this->uid=$this->session->userdata('uid');
     }
 
@@ -20,6 +21,10 @@ class Follow extends CB_Controller{
      * ajax
      */
     public function addFollow(){
+        if($this->uid == false){
+            return;
+        }
+
         if($this->input->is_ajax_request()){
 
             $data = array(
@@ -52,6 +57,30 @@ class Follow extends CB_Controller{
             }
             return $this->output->set_content_type('application/json')->set_output(json_encode($result));
         }
+    }
+
+    /*
+     * 得到用户所有的关注信息
+     * ajax get
+     */
+    public function getAllFollowers(){
+        if($this->input->is_ajax_request()){
+            $query = $this->follow_m->get_followings_by_uid($this->input->post('page_id'),10);
+//            if(int i = 0; i<$query.length; i++){
+//                $result[i] = $this->user_m->get_user_by_id($query[i]);
+//            }
+            $result["code"] = "200";
+            $result["meg"] = "查询信息成功";
+            return $this->output->set_content_type('application/json')->set_output(json_encode($result));
+        }
+    }
+
+    /*
+     * 得到用户所有的粉丝信息
+     * ajax get
+     */
+    public function getAllFollowings(){
+
     }
 
 }

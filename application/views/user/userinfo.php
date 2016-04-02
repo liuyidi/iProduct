@@ -71,7 +71,7 @@
     </div>
 </div>
 <script>
-$(function(){
+(function($){
     /**
      * 添加关注&取消关注
      */
@@ -79,6 +79,9 @@ $(function(){
     var url_follow = "<?php echo site_url("follow/addFollow");?>";
     $(document).on("click","#addfollow",function(){
         var self = $(this);
+        if(false){
+            //检测登录状态
+        }
         $.ajax({
             url: url_follow,
             type: "post",
@@ -110,6 +113,27 @@ $(function(){
         })
     });
 
-});
+    /*
+     * 得到用户关注的信息
+     */
+    var url_userFollowers = "<?php echo site_url("follow/getAllFollowers");?>";
+    var page_id = window.location.href.slice(-1);
+    var getUserFollowers = function(){
+        $.ajax({
+            url: url_userFollowers,
+            type: "get",
+            data: {"page_id":page_id},
+            dataType: "json",
+            success: function(data){
+                if(data.code == 200){
+                    console.log(data.msg);
+                }
+            }
+        })
+    }
+    getUserFollowers();
+
+
+})(jQuery);
 </script>
 <?php  $this->load->view('public/footer'); ?>
