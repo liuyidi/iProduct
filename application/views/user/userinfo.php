@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <div class="panel panel-default col-xs-6">
+            <div class="panel panel-default col-xs-4">
                 <div class="panel-heading">
                     个人主页
                 </div>
@@ -21,9 +21,19 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="panel panel-default col-xs-6">
+            <div class="panel panel-default col-xs-4">
                 <div class="panel-heading">
                     我关注的
+                </div>
+                <div class="panel-body">
+                    <?php foreach($followings as $v): ?>
+                        <span><?php echo $v; ?></span>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="panel panel-default col-xs-4">
+                <div class="panel-heading">
+                    粉丝
                 </div>
                 <div class="panel-body">
 

@@ -49,7 +49,7 @@
                                 <input name="username" id="username" type="hidden" value="<?php echo $content['username'];?>" />
                                 <input name="avatar" id="avatar" type="hidden" value="<?php //echo base_url($content['middle_avatar']); ?>" />
 
-                            <textarea name="content" class="col-xs-11" style="height:100px;" ></textarea>
+                            <textarea name="content" class="col-xs-11" style="height:100px;" id="comment" ></textarea>
                             <p></p>
                             <input type="submit" class="btn btn-danger" value="提交评论" />
                             <? }else{ ?>

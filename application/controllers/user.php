@@ -48,6 +48,7 @@ class User extends CB_Controller{
       $data['followings'] = $this->follow_m->get_followings_by_uid($uid,10);
       //通过ids得到用户的详细信息
 
+
       $data['followers'] = $this->follow_m->get_followers_by_uid($uid,10);
 
       $this->load->view('user/userinfo',$data);

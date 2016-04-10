@@ -27,7 +27,7 @@
                      <php> if ($info!=null){ </php>
                         <img class="large_avatar" width="100" height="100" src="__ROOT__/Uploads/thumb_{$info.avatar}"/>
                         <img class="middle_avatar" width="60" height="60" src="__ROOT__/Uploads/thumb_{$info.avatar}"/>
-                        <img class="small_avatar" width="40" height="40" src="$__ROOT__/Uploads/thumb_{$info.avatar}"/>
+                        <img class="small_avatar" width="40" height="40" src="__ROOT__/Uploads/thumb_{$info.avatar}"/>
                      <php> } else { </php>
                      <img class="large_avatar" src="__ROOT__/Uploads/avatar/avatar_large.jpg"/>
                         <img class="middle_avatar" src="__ROOT__/Uploads/avatar/default.jpg"/>

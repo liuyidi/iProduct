@@ -22,7 +22,7 @@
 			                    <span>作者: <a href="<?php echo site_url('user/info/'.$value['uid']);?>"><?php echo $value['username'];?></a></span>
 			                    <div class="comment_count  pull-right">
 			                       <span class="no-border badge"><?php echo $value['commentsnum'];?></span> 
-			                       <p>评论</p>
+			                       <a href="<?php echo site_url('/post/show/'.$value['pid']);?>#comment">评论</a>
 			                    </div>
 		                    </div>
 		                    <div class="content">
